@@ -3,7 +3,7 @@ class Solution:
         n = len(intervals)
         intervals.sort(key=lambda x: (-x[0], x[1]))
         count = 0
-        smallest = second = -1
+        smallest = second = 1000000000000
         for start, end in intervals:
             contains_smallest = end >= smallest
             contains_second = end >= second
@@ -14,7 +14,7 @@ class Solution:
                 smallest = start
                 count += 1
             else:
-                second = start - 1
+                second = start + 1
                 smallest = start
                 count += 2
         return count
