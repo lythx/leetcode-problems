@@ -7,7 +7,6 @@ class Solution(object):
         n = len(nums)
         triplets = []
         nums.sort()
-        i = 0
         for i in range(n - 2):
             if i > 0 and nums[i - 1] == nums[i]:
                 continue
